@@ -1,7 +1,8 @@
 import React from "react";
-import { View, Text, Button, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { theme } from "../theme";
+import { Button } from "../components/button";
 
 export default function Home() {
   const navigation = useNavigation();
@@ -15,9 +16,7 @@ export default function Home() {
       </Text>
       <Text style={styles.subtitle}>Controle total da sua academia, na palma da sua mão.</Text>
 
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Login")}>
-        <Text style={styles.buttonText}>Começar</Text>
-      </TouchableOpacity>
+    <Button title="Começar" onPress={() => navigation.navigate("Login")} />
     </View>
   );
 }
@@ -56,6 +55,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#FFFFFF',
     fontSize: 16,
-    fontWeight: 'bold',
+    fontFamily: theme.fontFamily.medium
   },
 });
