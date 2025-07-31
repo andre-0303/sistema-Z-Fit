@@ -1,7 +1,7 @@
-// src/screens/Home.tsx
 import React from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
+import { View, Text, Button, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { theme } from "../theme";
 
 export default function Home() {
   const navigation = useNavigation();
@@ -11,10 +11,13 @@ export default function Home() {
       <Text style={styles.title}>
         Z-
         <Text style={styles.green}>F</Text>
-        it
+        IT
       </Text>
+      <Text style={styles.subtitle}>Controle total da sua academia, na palma da sua mão.</Text>
 
-      <Button title="Ir para Login" onPress={() => navigation.navigate("Login")} />
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Login")}>
+        <Text style={styles.buttonText}>Começar</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -29,11 +32,30 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 70,
-    marginBottom: 16,
+    marginBottom: 10,
     color: "#fff",
-    fontWeight: "bold",
+    fontFamily: theme.fontFamily.extrabold
   },
   green: {
-    color: "#609346",
+    color: theme.colors.green,
+  },
+  subtitle: {
+    color: theme.colors.white,
+    fontFamily: theme.fontFamily.extralight,
+    textAlign: 'center',
+    fontSize: 16,
+    marginBottom: 40
+  },
+  button: {
+    backgroundColor: theme.colors.green,
+    paddingVertical: 12,
+    paddingHorizontal: 90,
+    borderRadius: 25,
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
