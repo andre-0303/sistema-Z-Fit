@@ -1,5 +1,6 @@
 import React from "react";
-import {useFonts, Montserrat_700Bold, Montserrat_800ExtraBold , Montserrat_900Black, Montserrat_200ExtraLight, Montserrat_500Medium, Montserrat_100Thin} from '@expo-google-fonts/montserrat'
+import { useFonts, Montserrat_700Bold, Montserrat_800ExtraBold, Montserrat_900Black, Montserrat_200ExtraLight, Montserrat_500Medium, Montserrat_100Thin } from '@expo-google-fonts/montserrat';
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import { AuthProvider } from "./src/context/AuthContext";
 import AppRoutes from "./src/routes/AppRoutes";
 import { Loading } from "./src/components/loading";
@@ -13,16 +14,17 @@ export default function App() {
     Montserrat_900Black,
     Montserrat_800ExtraBold,
     Montserrat_700Bold
-  })
+  });
 
-  if(!fontsLoaded) {
-    return <Loading/>
+  if (!fontsLoaded) {
+    return <Loading />;
   }
 
   return (
-   <AuthProvider>
-    <AppRoutes/>
-   </AuthProvider>
+    <SafeAreaProvider>
+      <AuthProvider>
+        <AppRoutes />
+      </AuthProvider>
+    </SafeAreaProvider>
   );
 }
-
