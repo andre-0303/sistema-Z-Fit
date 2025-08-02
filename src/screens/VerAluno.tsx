@@ -160,7 +160,8 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 12,
     marginBottom: 12,
-    fontSize: 16,
+    fontSize: 13,
+    fontFamily: theme.fontFamily.extralight
   },
   dropdown: {
     backgroundColor: "#222",
@@ -173,6 +174,8 @@ const styles = StyleSheet.create({
   },
   dropdownText: {
     color: "#fff",
+    fontFamily: theme.fontFamily.extralight,
+    fontSize: 13
   },
   card: {
     backgroundColor: "#333",
@@ -186,16 +189,18 @@ const styles = StyleSheet.create({
   },
   nome: {
     fontSize: 18,
-    fontWeight: "bold",
     color: "#fff",
+    fontFamily: theme.fontFamily.bold,
   },
   status: {
     color: "#ccc",
     marginTop: 4,
+    fontFamily: theme.fontFamily.extralight
   },
   vencimento: {
     color: "#ccc",
     marginTop: 4,
+    fontFamily: theme.fontFamily.thin
   },
   botoes: {
     justifyContent: "space-around",
@@ -205,7 +210,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#4caf50",
     paddingVertical: 6,
     borderRadius: 4,
-    marginBottom: 4,
+    marginBottom: 5,
     width: 80,
     alignItems: "center",
   },
@@ -218,6 +223,6 @@ const styles = StyleSheet.create({
   },
   btnText: {
     color: "#fff",
-    fontWeight: "bold",
+    fontFamily: theme.fontFamily.bold
   },
 });
