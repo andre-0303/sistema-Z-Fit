@@ -20,6 +20,10 @@ Feito para facilitar a vida e ajudar a manter tudo no controle!
 
 ---
 
+## 🖥️ Telas no Figma
+- [Design](https://www.figma.com/design/AJphiZraVf31iwgw3IAJYI/z-fit?node-id=0-1&t=HjXAuyU25D96XSDh-1)
+
+
 ## ⚙️ Como Rodar
 
 1. Clone o repositório:
