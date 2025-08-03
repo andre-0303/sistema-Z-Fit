@@ -5,10 +5,16 @@ import { api } from "../services/api";
 import { theme } from "../theme";
 import { format } from "date-fns";
 import { Aluno } from "../types/aluno";
+import { useNavigation } from "@react-navigation/native";
+import { useIsFocused } from "@react-navigation/native";
 
 export default function VerAluno() {
   const [alunos, setAlunos] = useState<Aluno[]>([]);
   const [filtroNome, setFiltroNome] = useState("");
+
+  const isFocused = useIsFocused()
+
+  const navigation = useNavigation()
 
   const [planoOpen, setPlanoOpen] = useState(false);
   const [plano, setPlano] = useState("todos");
@@ -28,7 +34,9 @@ export default function VerAluno() {
   ]);
 
   useEffect(() => {
-    fetchAlunos();
+    if(isFocused) {
+      fetchAlunos(); 
+       }
   }, []);
 
   const fetchAlunos = async () => {
@@ -50,12 +58,36 @@ export default function VerAluno() {
   };
 
   const handleEditar = (id: number) => {
-    Alert.alert("Editar", `Editar aluno Id: ${id}`);
+    navigation.navigate("EditarAluno", { id });
   };
 
-  const handleExcluir = (id: number) => {
-    Alert.alert("Excluir", `Excluir aluno Id: ${id}`);
-  };
+ const handleExcluir = (id: number) => {
+  Alert.alert(
+    "Confirmar Exclusão",
+    "Tem certeza que deseja excluir este aluno?",
+    [
+      {
+        text: "Cancelar",
+        style: "cancel",
+      },
+      {
+        text: "Excluir",
+        style: "destructive",
+        onPress: async () => {
+          try {
+            await api.delete(`/alunos/${id}`);
+            Alert.alert("Sucesso", "Aluno excluído com sucesso!");
+            fetchAlunos(); 
+          } catch (error) {
+            Alert.alert("Erro", "Erro ao excluir aluno");
+            console.error("Erro ao excluir aluno:", error);
+          }
+        },
+      },
+    ]
+  );
+};
+
 
   return (
     <View style={styles.container}>
