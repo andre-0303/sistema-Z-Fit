@@ -76,8 +76,7 @@ export default function CriarAluno() {
       <TouchableOpacity style={styles.button} onPress={handleSalvar}>
         <Text style={styles.buttonText}>Salvar</Text>
       </TouchableOpacity>
-
-      <Text style={styles.voltar}>{'< Voltar'}</Text>
+      
       </ScrollView>
 
     </View>
@@ -122,12 +121,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: theme.fontFamily.bold,
   },
-  voltar: {
-    color: "#ccc",
-    marginTop: 16,
-    textDecorationLine: "underline",
-    textAlign: "center",
-    fontFamily: theme.fontFamily.thin
-  },
+  
 });
 

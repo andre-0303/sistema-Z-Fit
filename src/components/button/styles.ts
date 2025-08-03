@@ -13,6 +13,6 @@ export const styles = StyleSheet.create({
   buttonText: {
     color: '#FFFFFF',
     fontSize: 16,
-    fontFamily: theme.fontFamily.extralight
+    fontFamily: theme.fontFamily.bold
   },
 })

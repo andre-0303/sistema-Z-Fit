@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     padding: 16,
     marginBottom: 12,
     width: "100%",
-    maxWidth: 300,
+    maxWidth: 320,
     gap: 5
   },
   configTitle: {
