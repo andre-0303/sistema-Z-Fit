@@ -1,12 +1,11 @@
-import {ActivityIndicator, View} from 'react-native'
-import { styles } from './styles'
-import { theme } from '../../theme/index'
+import { ActivityIndicator, View } from "react-native";
+import { styles } from "./styles";
+import { theme } from "../../theme";
 
 export function Loading() {
-    return (
-    <ActivityIndicator
-        style={styles.loading}
-        color={theme.colors.green}
-        />
-    )
+  return (
+    <View style={styles.container}>
+      <ActivityIndicator size="large" color={theme.colors.green} />
+    </View>
+  );
 }
